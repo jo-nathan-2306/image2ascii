@@ -2,12 +2,12 @@ from PIL import Image,  ImageFilter
 import streamlit as st
 st.set_page_config(page_title="ASCII Art Converter", page_icon=":art:")
 st.write("# ASCII Art Converter")
+st.markdown("made with <3")
 global img
 img=st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-
+n = st.slider("Image width", 40, 200, 100)
 convert = st.button("Convert to ASCII Art")
 ascchars = list(" .'`^\",:;Il!i~+_-?][}{1)(|\\/*tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$") 
-n = st.slider("Image width", 40, 200, 100)
 def resizeimg(image,new_width=n):
     w,h=image.size
     ratio=h/w
